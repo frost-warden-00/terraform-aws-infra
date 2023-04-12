@@ -2,7 +2,7 @@
 # Install epel for Amazon linux 2
 amazon-linux-extras install epel -y
 
-# Since is a nat instance, we need to configure the instance
+# Since is a nat instance, we need to execute these commands:
 # Should use Terraform with user data, but since Source/Destination check is not configurable for auto scaling instances. This will work as workaround.
 sysctl -w net.ipv4.ip_forward=1
 /sbin/iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
