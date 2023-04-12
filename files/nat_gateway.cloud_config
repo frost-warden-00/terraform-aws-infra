@@ -1,0 +1,27 @@
+#cloud-config
+
+package_update: true
+package_upgrade: true
+
+packages:
+  - jq
+  - curl
+  - python3
+  - python3-pip
+  - apt-transport-https
+  - net-tools
+  - vim
+  - wget
+  - rsyslog
+  - zip
+  - gcc
+  - rsync
+  - unzip
+  - git
+
+preserve_hostname: false
+manage_etc_hosts: false
+fqdn: ${hostname}
+
+runcmd:
+ - [ pip3, install, glances]
